@@ -9,6 +9,8 @@ app.use(express.urlencoded({extended:true}))
 const connection = require('./config/db.config')
 connection()
 const userRouter = require("./routes/user.routes")
+const indexRouter = require('./routes/index.routes')
+app.use('/',indexRouter)
 
 
 app.use('/user',userRouter);
